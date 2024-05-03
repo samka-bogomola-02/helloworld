@@ -62,10 +62,5 @@ public class Main {
         workers = workers + 94;
         workingHours = workingHours / workers;
         System.out.println("Если в компании работает " + workers + " человека, то всего " + workingHours + " часа работы может быть поделено между сотрудниками.");
-
-
-
-
-
     }
 }
