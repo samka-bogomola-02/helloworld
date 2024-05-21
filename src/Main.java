@@ -46,7 +46,7 @@ public class Main {
             System.out.println("\nДоставки нет.");
         }
     // Задача 5
-        int mouthNumber = 3;
+        int mouthNumber = 4;
         switch (mouthNumber){
             case 12, 1, 2 -> System.out.println("\nЭто зима.");
             case 3, 4, 5 -> System.out.println("\nЭто весна.");
