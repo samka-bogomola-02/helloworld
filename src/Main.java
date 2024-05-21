@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
     // Задача 1
-        int clientOS =2;
+        int clientOS =1;
         if (clientOS == 1){
             System.out.println("\nУстановите версию приложения для iOS по ссылке.");
         } else if (clientOS == 0) {
@@ -10,18 +10,18 @@ public class Main {
             System.out.println("\nНет такого приложения.");
         }
     // Задача 2
-        int year = 2024;
-        int clientOS2 = 0;
-        int clientDeviceYear = 2024;
-        if (clientOS2 == 1 && clientDeviceYear < year){
+        int clientDeviceYear = 2015;
+        int year = 2013;
+        if (clientOS == 1 && clientDeviceYear > year ){
             System.out.println("\nУстановите облегченную версию приложения для IOS по ссылке.");
-        } else if (clientOS2 == 1 && clientDeviceYear >= year) {
+        } else if (clientOS == 1 && clientDeviceYear <= year) {
             System.out.println("\nУстановите версию приложения для IOS по ссылке.");
-        } else if (clientOS2 == 0 && clientDeviceYear < year) {
+        } else if (clientOS == 0 && clientDeviceYear > year) {
             System.out.println("\nУстановите облегченную версию приложения для Android по ссылке.");
-        } else if (clientOS2 == 0 && clientDeviceYear >= year) {
+        } else if (clientOS == 0 && clientDeviceYear <= year) {
             System.out.println("\nУстановите версию приложения для Android по ссылке.");
         }
+        // Задача 3
     // Задача 3
         int yearForThirdTask = 1200;
         boolean yearIsValid = yearForThirdTask >= 1584;
@@ -46,13 +46,13 @@ public class Main {
             System.out.println("\nДоставки нет.");
         }
     // Задача 5
-        int mouthNumber = 4;
+        int mouthNumber = 13;
         switch (mouthNumber){
             case 12, 1, 2 -> System.out.println("\nЭто зима.");
             case 3, 4, 5 -> System.out.println("\nЭто весна.");
             case 6, 7, 8 -> System.out.println("\nЭто лето.");
             case 9, 10, 11 -> System.out.println("\nЭто осень.");
-            default -> System.out.println("\nНе валидный месяц");
+            default -> System.out.println("\nError: Такого месяца не существует");
         }
 
 
