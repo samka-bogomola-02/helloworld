@@ -1,61 +1,66 @@
 public class Main {
     public static void main(String[] args) {
-    // Задача 1
-        int clientOS =1;
-        if (clientOS == 1){
-            System.out.println("\nУстановите версию приложения для iOS по ссылке.");
-        } else if (clientOS == 0) {
-            System.out.println("\nУстановите версию приложения для Android по ссылке.");
-        } else {
-            System.out.println("\nНет такого приложения.");
+    // Задача 1. С помощью цикла for выведите в консоль все числа от 1 до 10.
+        for (int i = 1; i <= 10; i++){
+            System.out.print(i + " ");
         }
-    // Задача 2
-        int clientDeviceYear = 2015;
-        int year = 2013;
-        if (clientOS == 1 && clientDeviceYear > year ){
-            System.out.println("\nУстановите облегченную версию приложения для IOS по ссылке.");
-        } else if (clientOS == 1 && clientDeviceYear <= year) {
-            System.out.println("\nУстановите версию приложения для IOS по ссылке.");
-        } else if (clientOS == 0 && clientDeviceYear > year) {
-            System.out.println("\nУстановите облегченную версию приложения для Android по ссылке.");
-        } else if (clientOS == 0 && clientDeviceYear <= year) {
-            System.out.println("\nУстановите версию приложения для Android по ссылке.");
+        System.out.print("\n");
+    // Задача 2. С помощью цикла for выведите в консоль все числа от 10 до 1.
+        for (int i = 10; i != 0; i--){
+            System.out.print(i + " ");
         }
-        // Задача 3
-    // Задача 3
-        int yearForThirdTask = 1200;
-        boolean yearIsValid = yearForThirdTask >= 1584;
-        boolean yearIsLeap = yearForThirdTask % 4 == 0 && yearForThirdTask % 100 != 0 || yearForThirdTask % 400 == 0;
-        if (yearIsValid && yearIsLeap){
-            System.out.println("\nВысокосный год");
-        } else {
-            System.out.println("\nНе высокосный год");
+        System.out.print("\n");
+    // Задача 3. Выведите в консоль все четные числа от 0 до 17.
+        for (int i = 0; i <= 17; i = i + 2){
+            System.out.print(i + " ");
         }
-    // Задача 4
-        int deliveryDistance = 102;
-        int deliveryDay = 1;
-        if (deliveryDistance < 20){
-            System.out.println("\nПотребуется дней: " + deliveryDay);
-        } else if (deliveryDistance <= 60) {
-            deliveryDay++;
-            System.out.println("\nПотребуется дней: " + deliveryDay);
-        } else if (deliveryDistance <= 100) {
-            deliveryDay += 2;
-            System.out.println("\nПотребуется дней: " + deliveryDay);
-        } else {
-            System.out.println("\nДоставки нет.");
+        System.out.print("\n");
+    // Задача 4. Выведите в консоль все числа от 10 до −10 от бо́льшего числа к меньшему.
+        for (int i = 10; i != -11; i--){
+            System.out.print(i + " ");
         }
-    // Задача 5
-        int mouthNumber = 13;
-        switch (mouthNumber){
-            case 12, 1, 2 -> System.out.println("\nЭто зима.");
-            case 3, 4, 5 -> System.out.println("\nЭто весна.");
-            case 6, 7, 8 -> System.out.println("\nЭто лето.");
-            case 9, 10, 11 -> System.out.println("\nЭто осень.");
-            default -> System.out.println("\nError: Такого месяца не существует");
+        System.out.print("\n");
+    /* Задача 5. Напишите программу, которая выводит в консоль все високосные года,
+    начиная с 1904 года до 2096. В консоль результат должен выводиться в формате:
+    «… год является високосным». */
+        for (int i = 1904; i <= 2096; i = i +4){
+            System.out.println(i + " год является высокосным.");
         }
-
-
-
+    /* Задача 6. Напишите программу, которая выводит в консоль последовательность чисел:
+    7 14 21 28 35 42 49 56 63 70 77 84 91 98 */
+        for (int i = 7; i <= 98; i = i +7){
+            System.out.print(i + " ");
+        }
+        System.out.print("\n");
+    /* Задача 7. Напишите программу, которая выводит в консоль последовательность чисел:
+    1 2 4 8 16 32 64 128 256 512 */
+        for (int i = 1; i <= 512; i = i * 2){
+            System.out.print(i + " ");
+        }
+        System.out.print("\n");
+    /* Задача 8. Посчитайте с помощью цикла for сумму годовых накоплений,
+    если каждый месяц вы будете откладывать по 29 000 рублей «в банку».
+    Выведите сумму накоплений за каждый месяц в консоль в формате: «Месяц …, сумма накоплений равна … рублей». */
+        int total = 0, accumulation = 29_000;
+        for (int month = 1; month <= 12; month++){
+            total += accumulation;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей." );
+        }
+        System.out.print("\n");
+    /* Задача 9. Перепишите решение задачи выше при условии, что деньги вы откладывать будете не «в банку»,
+    а в банк под проценты — 12% годовых. Выведите сумму накоплений за каждый месяц в консоль в формате:
+    «Месяц …, сумма накоплений равна … рублей». */
+        int total1 = 0, accumulation1 = 29_000;
+        double percent = 1.01;
+        for (int i = 1; i <= 12; i++){
+            total1 *= percent;
+            total1 += accumulation1;
+            System.out.println("Месяц " + i + ", сумма накоплений равна " + total1 + " рублей." );
+        }
+    /* Напишите программу, которая выводит в консоль таблицу умножения на 2:
+    2*1=2; 2*2=4; 2*3=6; 2*4=8; 2*5=10; 2*6=12; 2*7=14; 2*8=16; 2*9=18; 2*10=20 */
+        for (int i = 1; i <= 10; i++){
+            System.out.println("2 * " + i + " = " + 2 * i);
+        }
     }
 }
