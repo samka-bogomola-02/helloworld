@@ -40,19 +40,11 @@ public class Main {
     В качестве данных для массива используйте: char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
     В результате в консоль должно быть выведено: Ivanov Ivan. */
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char temp;
-        for (int i = 0; i < reverseFullName.length / 2; i++){
-            temp = reverseFullName[i];
-            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
-            reverseFullName[reverseFullName.length - 1 - i] = temp;
+        char q = 0;
+        for (int i = reverseFullName.length - 1; i >=0; i--){
+            q += reverseFullName[i];
+            System.out.print(reverseFullName[i]);
         }
-        System.out.println(Arrays.toString(reverseFullName));
-        String str = "[I, v, a, n, o, v,  , I, v, a, n]\b";
-        str = str.replace(",", "");
-        System.out.println(str);
 
-        String Str = str;
-        Str = Str.substring(1);
-        System.out.println(Str);
     }
 }
