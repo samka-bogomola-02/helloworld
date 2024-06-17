@@ -2,55 +2,50 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        printleapYear(1664);
-        printValidTypeInfo(0,2024);
-        calculateDeliveryDays(95);
-    }
-    //1
-    public static void printleapYear (int year) {
-        if (year > 1584 && (year % 4 == 0 || year % 100 != 0 && year % 400 == 0)) {
-            System.out.println("\n" + year + " год является высокосным.");
+        // Задача 1.
+        int year = 2025;
+        printLeapYear(year);
+        // Задача 2.
+        printAppInstallationMessage(2015,2014,0);
+        // Задача 3.
+        int deliveryDistance = 50;
+        int days = distanceTime(deliveryDistance);
+        if (days > 0) {
+            System.out.println("\nПотребуется дней: " + days + " срок доставки.");
         } else {
-            System.out.println("\n" + year + " год не является высокосным.");
-        }
-    }
-    //2
-    public static void printValidTypeInfo(int type, int year) {
-        int currentYear = LocalDate.now().getYear();
-        String resultType;
-        String resultStatus;
-
-        if (type == 1){
-            resultType = "для IOS.";
-        } else {
-            resultType = "для Android.";
-        }
-        if (year < currentYear) {
-            resultStatus = " облегченную ";
-        } else {
-            resultStatus = "";
-        }
-        System.out.println("\nУстановите" + resultStatus + " версию приложения " + resultType);
-    }
-    //2
-    public static int calculateDeliveryDays(int distance){
-        int resultDays = 1;
-        if (distance <= 20) {
-            //resultDays++;
-            System.out.println("\nПотребуется дней: " + resultDays);
-        }
-        else if (distance > 20 && distance <= 60) {
-            resultDays++;
-            System.out.println("\nПотребуется дней: " + resultDays);
-        }
-        else if (distance > 60 && distance <= 100) {
-            resultDays+=2;
-            System.out.println("\nПотребуется дней: " + resultDays);
-            return -1;
-        }
-        else if (distance > 100) {
             System.out.println("\nДоставки нет.");
         }
-        return resultDays;
+    }
+    // Задача 1.
+    public static void printLeapYear (int year) {
+        if (year > 1584 && (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)) {
+            System.out.println(year + " год високосный");
+        } else {
+            System.out.println(year + " год не високосный");
+        }
+    }
+    // Задача 2.
+    public static void printAppInstallationMessage(int deviceYear, int year, int clientOS) {
+        if (clientOS == 1 && deviceYear > year ){
+            System.out.println("\nУстановите облегченную версию приложения для IOS по ссылке.");
+        } else if (clientOS == 1 && deviceYear <= year) {
+            System.out.println("\nУстановите версию приложения для IOS по ссылке.");
+        } else if (clientOS == 0 && deviceYear > year) {
+            System.out.println("\nУстановите облегченную версию приложения для Android по ссылке.");
+        } else if (clientOS == 0 && deviceYear <= year) {
+            System.out.println("\nУстановите версию приложения для Android по ссылке.");
+        }
+    }
+    // Задача 3.
+    public static int distanceTime(int km) {
+        if (km <= 20) {
+            return 1;
+        } else if (km > 20 && km < 60) {
+            return 2;
+        } else if (km >= 60 && km < 100) {
+            return 3;
+        } else {
+            return 0;
+        }
     }
 }
