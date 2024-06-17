@@ -26,13 +26,13 @@ public class Main {
     }
     // Задача 2.
     public static void printAppInstallationMessage(int deviceYear, int year, int clientOS) {
-        if (clientOS == 1 && deviceYear > year ){
+        if (clientOS == 0 && deviceYear < year ){
             System.out.println("\nУстановите облегченную версию приложения для IOS по ссылке.");
-        } else if (clientOS == 1 && deviceYear <= year) {
+        } else if (clientOS == 0 && deviceYear >= year) {
             System.out.println("\nУстановите версию приложения для IOS по ссылке.");
-        } else if (clientOS == 0 && deviceYear > year) {
+        } else if (clientOS == 1 && deviceYear < year) {
             System.out.println("\nУстановите облегченную версию приложения для Android по ссылке.");
-        } else if (clientOS == 0 && deviceYear <= year) {
+        } else if (clientOS == 1 && deviceYear >= year) {
             System.out.println("\nУстановите версию приложения для Android по ссылке.");
         }
     }
