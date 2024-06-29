@@ -19,6 +19,13 @@ public class App {
         book1.setYear(1950);
         System.out.println("book1.getYear() = " + book1.getYear());
 
+        System.out.println("\nauthor = " + author + "\nauthor1 = " + author1);
+        System.out.println(book + "\n" + book1);
 
+        System.out.println("author.equals(author) = " + author.equals(author));
+        System.out.println("author.equals(author1) = " + author.equals(author1));
+
+        System.out.println("book.equals(book) = " + book.equals(book));
+        System.out.println("book.equals(book1) = " + book.equals(book1));
     }
 }
