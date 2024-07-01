@@ -26,6 +26,7 @@ public class Main {
         } else {
             System.out.println("There are no additional places for an employee.");
         }
+
         int employeeIdToFind = 21; // ID сотрудника, которого нужно найти
         Employee foundEmployee = employeeManagement.findEmployeeById(employeeIdToFind);
         if (foundEmployee != null) {

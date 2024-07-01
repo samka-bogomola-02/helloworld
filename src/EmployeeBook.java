@@ -71,7 +71,7 @@ public class EmployeeBook {
                 return true;
             }
         }
-        return false;
+        return false; // Сотрудник с указанным ID не найден
     }
     public boolean addEmployee(Employee newEmployee) {
         for (int i = 0; i < employees.length; i++) {
@@ -88,6 +88,6 @@ public class EmployeeBook {
                 return employee; // Найден сотрудник с указанным ID
             }
         }
-        return null;
+        return null; // Сотрудник с указанным ID не найден
     }
 }
