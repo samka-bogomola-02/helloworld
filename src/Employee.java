@@ -60,7 +60,6 @@ public class Employee {
         return "id " + id + " - employee " + name + " " + lastname + " " + patronymic +
                 ", department " + secession + ", salary " + salary;
     }
-    //  Условия для зп и департаментов.
     private int salaryCheck(int salary) {
         if (salary < 0) {
             throw new IllegalArgumentException("salary is a negative number");

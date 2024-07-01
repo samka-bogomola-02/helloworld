@@ -71,7 +71,7 @@ public class EmployeeBook {
                 return true;
             }
         }
-        return false; // Сотрудник с указанным ID не найден
+        return false;
     }
     public boolean addEmployee(Employee newEmployee) {
         for (int i = 0; i < employees.length; i++) {
@@ -80,7 +80,7 @@ public class EmployeeBook {
                 return true; // Место для сотрудника найдено
             }
         }
-        return false; // Свободных мест нет
+        return false;
     }
     public Employee findEmployeeById(int employeeId) {
         for (Employee employee : employees) {
@@ -88,6 +88,6 @@ public class EmployeeBook {
                 return employee; // Найден сотрудник с указанным ID
             }
         }
-        return null; // Сотрудник с указанным ID не найден
+        return null;
     }
 }
