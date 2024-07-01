@@ -57,7 +57,7 @@ public class Employee {
         return Objects.hash(id, name, lastname, patronymic, secession, salary);
     }
     public String toString() {
-        return "id " + id + ", employee " + name + " " + lastname + " " + patronymic +
+        return "id " + id + " - employee " + name + " " + lastname + " " + patronymic +
                 ", department " + secession + ", salary " + salary;
     }
     //  Условия для зп и департаментов.

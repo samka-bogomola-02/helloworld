@@ -1,72 +1,37 @@
 public class Main {
-    public Employee[] employees;
-    public Main() {
-        employees = new Employee[10];
-        initializeEmployees();
-        System.out.println(" ");
-    }
     public static void main(String[] args) {
-        Main main = new Main();
-        main.printEmployees();
+        EmployeeBook employees = new EmployeeBook();
+        employees.printEmployees();
         System.out.println(" ");
-        System.out.println("Total cost of salary per month: " + main.getTotalSalary());
-        System.out.println("Employee with minimum salary: " + main.getEmployeeWithMinSalary());
-        System.out.println("Employee with maximum salary: " + main.getEmployeeWithMaxSalary());
-        System.out.println("Average salary per month: " + main.totalMonthlyAverageSalary());
-        System.out.println(" ");
-        System.out.println("A list of employees: ");
-        main.printEmployeesFullNames();
-    }
-    public void initializeEmployees() {
-        employees[0] = new Employee("Анато́лий", "Оноприе́нко", "Ю́рьевич", 60_500, 2);
-        employees[1] = new Employee("Алекса́ндр", "Пичу́шкин", "Ю́рьевич", 47_000, 1);
-        employees[2] = new Employee("Михаил", "Попко́в", "Ви́кторович", 62_000, 5);
-        employees[3] = new Employee("Андре́й", "Чикати́ло", "Рома́нович", 140_000, 4);
-        employees[4] = new Employee("Сергей", "Ткач", "Фёдорович", 115_000, 5);
-        employees[5] = new Employee("Алексей", "Выговский", "Олегович", 95_000, 3);
-        employees[6] = new Employee("Теодо́р", "Ба́нди", "Ро́берт", 82_000, 4);
-        employees[7] = new Employee("Ра́дик", "Таги́ров", "Таги́рович", 125_500, 2);
-        employees[8] = new Employee("Да́рья", "Салтыко́ва", "Никола́евна", 110_000, 3);
-        employees[9] = new Employee("Пе́дро", "Ло́пес", "Ало́нсо", 75_000, 1);
-    }
-    public void printEmployees() {
-        for (Employee employee : employees) {
-            System.out.println(employee);
+
+        System.out.println("Total cost of salary per month: " + employees.getTotalSalary());
+        System.out.println("Employee with minimum salary: " + employees.getEmployeeWithMinSalary());
+        System.out.println("Employee with maximum salary: " + employees.getEmployeeWithMaxSalary());
+        System.out.println("Average salary per month: " + employees.totalMonthlyAverageSalary());
+
+        EmployeeBook employeeManagement = new EmployeeBook();
+
+        int employeeIdToDelete = 20; // ID сотрудника, которого нужно удалить
+        boolean deleted = employeeManagement.deleteEmployeeById(employeeIdToDelete);
+        if (deleted) {
+            System.out.println("Сотрудник с ID " + employeeIdToDelete + " успешно удален.");
+        } else {
+            System.out.println("Сотрудник с ID " + employeeIdToDelete + " не найден.");
         }
-    }
-    public int getTotalSalary() {
-        int totalSalary = 0;
-        for (Employee employee : employees) {
-          totalSalary += employee.getSalary();
+
+        Employee newEmployee = new Employee("Иван", "Иванов", "Иванович", 57000, 3); // Создаем нового сотрудника
+        boolean added = employeeManagement.addEmployee(newEmployee);
+        if (added) {
+            System.out.println("Сотрудник успешно добавлен.");
+        } else {
+            System.out.println("Нет свободных мест для сотрудника.");
         }
-        return totalSalary;
-    }
-    public Employee getEmployeeWithMinSalary() {
-        Employee minSalaryEmployee = employees[0];
-        for (Employee employee : employees) {
-            if (employee.getSalary() < minSalaryEmployee.getSalary()) {
-                minSalaryEmployee = employee;
-            }
-        }
-        return minSalaryEmployee;
-    }
-    public Employee getEmployeeWithMaxSalary() {
-        Employee employeeWithMaxSalary = employees[0];
-        for (Employee employee : employees) {
-            if (employee.getSalary() > employeeWithMaxSalary.getSalary()) {
-                employeeWithMaxSalary = employee;
-            }
-        }
-        return employeeWithMaxSalary;
-    }
-    public int totalMonthlyAverageSalary() {
-        return getTotalSalary() / employees.length;
-    }
-    public void printEmployeesFullNames() {
-        int counter = 1;
-        for (Employee employee : employees) {
-            System.out.println(counter + ", " + employee.getLastname() + " " + employee.getName() + " " + employee.getPatronymic());
-            counter++;
+        int employeeIdToFind = 21; // ID сотрудника, которого нужно найти
+        Employee foundEmployee = employeeManagement.findEmployeeById(employeeIdToFind);
+        if (foundEmployee != null) {
+            System.out.println("Найден сотрудник: " + foundEmployee.getLastname() + " " + foundEmployee.getName() + " " + foundEmployee.getPatronymic());
+        } else {
+            System.out.println("Сотрудник с ID " + employeeIdToFind + " не найден.");
         }
     }
 }
