@@ -14,24 +14,25 @@ public class Main {
         int employeeIdToDelete = 20; // ID сотрудника, которого нужно удалить
         boolean deleted = employeeManagement.deleteEmployeeById(employeeIdToDelete);
         if (deleted) {
-            System.out.println("Сотрудник с ID " + employeeIdToDelete + " успешно удален.");
+            System.out.println("Employee with ID " + employeeIdToDelete + " deleted.");
         } else {
-            System.out.println("Сотрудник с ID " + employeeIdToDelete + " не найден.");
+            System.out.println("Employee with ID " + employeeIdToDelete + " not found.");
         }
 
-        Employee newEmployee = new Employee("Иван", "Иванов", "Иванович", 57000, 3); // Создаем нового сотрудника
+        Employee newEmployee = new Employee("Луис", "Альфредо", "Гаравито", 57000, 3); // Создаем нового сотрудника
         boolean added = employeeManagement.addEmployee(newEmployee);
         if (added) {
-            System.out.println("Сотрудник успешно добавлен.");
+            System.out.println("Employee added successfully.");
         } else {
-            System.out.println("Нет свободных мест для сотрудника.");
+            System.out.println("There are no additional places for an employee.");
         }
+
         int employeeIdToFind = 21; // ID сотрудника, которого нужно найти
         Employee foundEmployee = employeeManagement.findEmployeeById(employeeIdToFind);
         if (foundEmployee != null) {
-            System.out.println("Найден сотрудник: " + foundEmployee.getLastname() + " " + foundEmployee.getName() + " " + foundEmployee.getPatronymic());
+            System.out.println("Employee found: " + foundEmployee.getLastname() + " " + foundEmployee.getName() + " " + foundEmployee.getPatronymic());
         } else {
-            System.out.println("Сотрудник с ID " + employeeIdToFind + " не найден.");
+            System.out.println("Employee with ID " + employeeIdToFind + " not found.");
         }
     }
 }

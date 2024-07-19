@@ -80,7 +80,7 @@ public class EmployeeBook {
                 return true; // Место для сотрудника найдено
             }
         }
-        return false; // Свободных мест нет
+        return false;
     }
     public Employee findEmployeeById(int employeeId) {
         for (Employee employee : employees) {
