@@ -6,13 +6,13 @@ public abstract class Hogwarts {
     protected final String name;
     protected final String faculty;
     protected final int transgression;
-    protected final int magicPover;
+    protected final int magicPower;
 
-    public Hogwarts(String name, String faculty, int transgression, int magicPover) {
+    public Hogwarts(String name, String faculty, int transgression, int magicPower) {
         this.name = name;
         this.faculty = faculty;
         this.transgression = transgression;
-        this.magicPover = magicPover;
+        this.magicPower = magicPower;
     }
     public static void likenStudentsHogw(Hogwarts student, Hogwarts student1){
         if (student.getPover() > student1.getPover()){
@@ -24,7 +24,7 @@ public abstract class Hogwarts {
         }
     }
     private int getPover(){
-        return transgression + magicPover;
+        return transgression + magicPower;
     }
 
     public String getName() {
@@ -34,18 +34,18 @@ public abstract class Hogwarts {
         return transgression;
     }
     public int getMagicPover() {
-        return magicPover;
+        return magicPower;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Hogwarts hogwarts)) return false;
-        return transgression == hogwarts.transgression && magicPover == hogwarts.magicPover && Objects.equals(name, hogwarts.name);
+        return transgression == hogwarts.transgression && magicPower == hogwarts.magicPower && Objects.equals(name, hogwarts.name);
     }
     @Override
     public int hashCode() {
-        return Objects.hash(name, transgression, magicPover);
+        return Objects.hash(name, transgression, magicPower);
     }
 
     @Override
@@ -53,7 +53,7 @@ public abstract class Hogwarts {
         return "Hogwarts{" +
                 "name='" + name + '\'' +
                 ", transgression=" + transgression +
-                ", magicPover=" + magicPover +
+                ", magicPover=" + magicPower +
                 '}';
     }
 }

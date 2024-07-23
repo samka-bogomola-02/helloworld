@@ -7,8 +7,8 @@ public class Hufflepuff extends Hogwarts {
     private final int loyal;
     private final int honest;
 
-    public Hufflepuff (String name, String faculty, int transgression, int magicPover, int hardworking, int loyal, int honest) {
-        super(name, faculty, transgression, magicPover);
+    public Hufflepuff (String name, String faculty, int transgression, int magicPower, int hardworking, int loyal, int honest) {
+        super(name, faculty, transgression, magicPower);
         this.hardworking = hardworking;
         this.loyal = loyal;
         this.honest = honest;
@@ -56,7 +56,7 @@ public class Hufflepuff extends Hogwarts {
                 ", honest=" + honest +
                 ", name='" + name + '\'' +
                 ", transgression=" + transgression +
-                ", magicPover=" + magicPover +
+                ", magicPover=" + magicPower +
                 '}';
     }
     @Override

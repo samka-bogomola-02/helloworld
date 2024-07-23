@@ -2,8 +2,8 @@ import model.*;
 
 public class Main {
     public static void main(String[] args) {
-        Gryffindor harryPotter = new Gryffindor("Harry Potter","(Гриффиндор)",1,2,3,4,5);
-        Gryffindor hermioneGranger = new Gryffindor("Hermione Granger","(Гриффиндор)",2,3,4,6,4);
+        Gryffindor harryPotter = new Gryffindor("Harry Potter","(Гриффиндор)",2,3,3,4,5);
+        Gryffindor hermioneGranger = new Gryffindor("Hermione Granger","(Гриффиндор)",1,2,4,4,5);
         Gryffindor ronWeasley = new Gryffindor("Ron Weasley","(Гриффиндор)",3,2,2,1, 4);
 
         Slytherin dracoMalfoy = new Slytherin("Draco Malfoy","(Слизерин)",2,3,4, 5, 6,7,1);

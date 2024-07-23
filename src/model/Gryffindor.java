@@ -7,8 +7,8 @@ public class Gryffindor extends Hogwarts {
     public final int honor;
     public final int bravery;
 
-    public Gryffindor(String name, String faculty, int transgression, int magicPover, int nobility, int honor, int bravery) {
-        super(name, faculty, transgression, magicPover);
+    public Gryffindor(String name, String faculty, int transgression, int magicPower, int nobility, int honor, int bravery) {
+        super(name, faculty, transgression, magicPower);
         this.nobility = nobility;
         this.honor = honor;
         this.bravery = bravery;
@@ -16,7 +16,7 @@ public class Gryffindor extends Hogwarts {
     public void likenStudentsGryf(Gryffindor student){
         if (getPover() > student.getPover()){
             System.out.println(String.format(this + " лучший Гриффиндорец, чем " + student));
-        } else if (bravery + honor + nobility < student.bravery + student.honor + student.nobility) {
+        } else if (nobility + honor + bravery < student.nobility + student.honor + student.bravery) {
             System.out.println(String.format(student + " лучший Гриффиндорец, чем " + this));
         } else {
             System.out.println("Студенты " + this + " и " + student + " одинаково успешны");
@@ -56,7 +56,7 @@ public class Gryffindor extends Hogwarts {
                 ", bravery=" + bravery +
                 ", name='" + name + '\'' +
                 ", transgression=" + transgression +
-                ", magicPover=" + magicPover +
+                ", magicPover=" + magicPower +
                 '}';
     }
 
