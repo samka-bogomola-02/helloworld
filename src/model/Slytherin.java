@@ -19,18 +19,16 @@ public class Slytherin extends Hogwarts {
         this.thirstForPower = thirstForPover;
     }
     public void likenStudentsSlyth(Slytherin student){
-        if (getPover() > student.getPover()){
+        if (getPower() > student.getPower()){
             System.out.println(String.format(this + " лучший Слизеринец, чем " + student));
-        } else if (cunning + determination + ambition + resourcefulness + thirstForPower <
-                student.cunning + student.determination + student.ambition + student.resourcefulness + student.thirstForPower) {
+        } else if (getPower() < student.getPower()) {
             System.out.println(String.format(student + " лучший Слизеринец, чем " + this));
         } else {
             System.out.println("Студенты" + this + " и " + student + " одинаково успешны");
         }
     }
-    private int getPover(){
-        int i1 = cunning + determination + ambition + resourcefulness + thirstForPower;
-        return i1;
+    private int getPower(){
+        return cunning + determination + ambition + resourcefulness + thirstForPower;
     }
 
     public int getCunning() {
@@ -68,13 +66,13 @@ public class Slytherin extends Hogwarts {
                 ", ambition=" + ambition +
                 ", resourcefulness=" + resourcefulness +
                 ", thirstForPover=" + thirstForPower +
-                ", name='" + name + '\'' +
-                ", transgression=" + transgression +
-                ", magicPover=" + magicPower +
+                ", name='" + super.getName() + '\'' +
+                ", transgression=" + super.getTransgression() +
+                ", magicPover=" + super.getMagicPower() +
                 '}';
     }
     @Override
     public String toString() {
-        return name + " " + faculty;
+        return super.getName() + " " + super.getFaculty();
     }
 }

@@ -14,15 +14,15 @@ public class Ravenclaw extends Hogwarts {
         this.creative = creative;
     }
     public void likenStudentsRaven(Ravenclaw student){
-        if (getPover() > student.getPover()){
+        if (getPower() > student.getPower()){
             System.out.println(String.format(this + " лучший Когтевранец, чем " + student));
-        } else if (wise + witty + creative < student.wise + student.witty + student.creative) {
+        } else if (getPower() < student.getPower()) {
             System.out.println(String.format(student + " лучший Когтевранец, чем " + this));
         } else {
             System.out.println("Студенты " + this + " и " + student + " одинаково успешны");
         }
     }
-    private int getPover(){
+    private int getPower(){
         return wise + witty + creative;
     }
 
@@ -53,13 +53,13 @@ public class Ravenclaw extends Hogwarts {
                 "wise=" + wise +
                 ", witty=" + witty +
                 ", creative=" + creative +
-                ", name='" + name + '\'' +
-                ", transgression=" + transgression +
-                ", magicPover=" + magicPower +
+                ", name='" + super.getName() + '\'' +
+                ", transgression=" + super.getTransgression() +
+                ", magicPover=" + super.getMagicPower() +
                 '}';
     }
     @Override
     public String toString() {
-        return name + " " + faculty;
+        return super.getName()+ " " + super.getFaculty();
     }
 }

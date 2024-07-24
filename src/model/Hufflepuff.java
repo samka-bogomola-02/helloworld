@@ -14,17 +14,16 @@ public class Hufflepuff extends Hogwarts {
         this.honest = honest;
     }
     public void likenStudentsHuff(Hufflepuff student){
-        if (getPover() > student.getPover()){
+        if (getPower() > student.getPower()){
             System.out.println(String.format(this + " лучший Пуффендуец, чем " + student));
-        } else if (hardworking + loyal + honest < student.hardworking + student.loyal + student.honest) {
+        } else if (getPower() < student.getPower()) {
             System.out.println(String.format(student + " лучший Пуффендуец, чем " + this));
         } else {
             System.out.println(this + " и " + student + " одинаково успешны");
         }
     }
-    private int getPover(){
-        int i2 = hardworking + loyal + honest;
-        return i2;
+    private int getPower(){
+        return hardworking + loyal + honest;
     }
 
     public int getHardworking() {
@@ -54,13 +53,13 @@ public class Hufflepuff extends Hogwarts {
                 "hardworking=" + hardworking +
                 ", loyal=" + loyal +
                 ", honest=" + honest +
-                ", name='" + name + '\'' +
-                ", transgression=" + transgression +
-                ", magicPover=" + magicPower +
+                ", name='" + super.getName() + '\'' +
+                ", transgression=" + super.getTransgression() +
+                ", magicPover=" + super.getMagicPower() +
                 '}';
     }
     @Override
     public String toString() {
-        return name + " " + faculty;
+        return super.getName() + " " + super.getFaculty();
     }
 }

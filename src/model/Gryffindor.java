@@ -3,9 +3,9 @@ package model;
 import java.util.Objects;
 
 public class Gryffindor extends Hogwarts {
-    public final int nobility;
-    public final int honor;
-    public final int bravery;
+    private final int nobility;
+    private final int honor;
+    private final int bravery;
 
     public Gryffindor(String name, String faculty, int transgression, int magicPower, int nobility, int honor, int bravery) {
         super(name, faculty, transgression, magicPower);
@@ -14,17 +14,16 @@ public class Gryffindor extends Hogwarts {
         this.bravery = bravery;
     }
     public void likenStudentsGryf(Gryffindor student){
-        if (getPover() > student.getPover()){
+        if (getPower() > student.getPower()){
             System.out.println(String.format(this + " лучший Гриффиндорец, чем " + student));
-        } else if (nobility + honor + bravery < student.nobility + student.honor + student.bravery) {
+        } else if (getPower() < student.getPower()) {
             System.out.println(String.format(student + " лучший Гриффиндорец, чем " + this));
         } else {
             System.out.println("Студенты " + this + " и " + student + " одинаково успешны");
         }
     }
-    private int getPover(){
-        int i = bravery + honor + nobility;
-        return i;
+    private int getPower(){
+        return bravery + honor + nobility;
     }
 
     public int getNobility() {
@@ -54,14 +53,14 @@ public class Gryffindor extends Hogwarts {
                 "nobility=" + nobility +
                 ", honor=" + honor +
                 ", bravery=" + bravery +
-                ", name='" + name + '\'' +
-                ", transgression=" + transgression +
-                ", magicPover=" + magicPower +
+                ", name='" + super.getName() + '\'' +
+                ", transgression=" + super.getTransgression() +
+                ", magicPover=" + super.getMagicPower() +
                 '}';
     }
 
     @Override
     public String toString() {
-        return name + " " + faculty;
+        return super.getName() + " " + super.getFaculty();
     }
 }
