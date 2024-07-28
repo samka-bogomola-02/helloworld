@@ -1,38 +1,32 @@
+import model.*;
+
 public class Main {
     public static void main(String[] args) {
-        EmployeeBook employees = new EmployeeBook();
-        employees.printEmployees();
-        System.out.println(" ");
+        Gryffindor harryPotter = new Gryffindor("Harry Potter","(Гриффиндор)",2,3,3,4,5);
+        Gryffindor hermioneGranger = new Gryffindor("Hermione Granger","(Гриффиндор)",1,2,4,4,5);
+        Gryffindor ronWeasley = new Gryffindor("Ron Weasley","(Гриффиндор)",3,2,2,1, 4);
 
-        System.out.println("Total cost of salary per month: " + employees.getTotalSalary());
-        System.out.println("Employee with minimum salary: " + employees.getEmployeeWithMinSalary());
-        System.out.println("Employee with maximum salary: " + employees.getEmployeeWithMaxSalary());
-        System.out.println("Average salary per month: " + employees.totalMonthlyAverageSalary());
+        Slytherin dracoMalfoy = new Slytherin("Draco Malfoy","(Слизерин)",2,3,4, 5, 6,7,1);
+        Slytherin gregoryGoyle = new Slytherin("Gregory Goyle","(Слизерин)",0,1,2,3, 4, 5,6);
+        Slytherin grahamMontague = new Slytherin("Graham Montague","(Слизерин)",7,2,4,3, 4, 3,3);
 
-        EmployeeBook employeeManagement = new EmployeeBook();
+        Hufflepuff zachariahSmith = new Hufflepuff("Zachariah Smith","(Пуффендуй)",5,5,5,5,5);
+        Hufflepuff cedricDiggory = new Hufflepuff("Cedric Diggory","(Пуффендуй)",5,9,5,7,5);
+        Hufflepuff justinFinchFletchley = new Hufflepuff("Justin Finch Fletchley","(Пуффендуй)",6,2,6,9,2);
 
-        int employeeIdToDelete = 20; // ID сотрудника, которого нужно удалить
-        boolean deleted = employeeManagement.deleteEmployeeById(employeeIdToDelete);
-        if (deleted) {
-            System.out.println("Employee with ID " + employeeIdToDelete + " deleted.");
-        } else {
-            System.out.println("Employee with ID " + employeeIdToDelete + " not found.");
-        }
+        Ravenclaw zhouChang = new Ravenclaw("Zhou Chang","(Когтевран)",7,8,3,5,6);
+        Ravenclaw padmaPatil = new Ravenclaw("Padma Patil","(Когтевран)",7,6,3,5,2);
+        Ravenclaw marcusBelby = new Ravenclaw("Marcus Belby","(Когтевран)",5,7,7,3,6);
 
-        Employee newEmployee = new Employee("Луис", "Альфредо", "Гаравито", 57000, 3); // Создаем нового сотрудника
-        boolean added = employeeManagement.addEmployee(newEmployee);
-        if (added) {
-            System.out.println("Employee added successfully.");
-        } else {
-            System.out.println("There are no additional places for an employee.");
-        }
+        System.out.println("\nСравнение студентов одного факультета между собой по свойствам, присущим данному факультету: \n");
+        harryPotter.likenStudentsGryf(hermioneGranger);
+        dracoMalfoy.likenStudentsSlyth(gregoryGoyle);
+        cedricDiggory.likenStudentsHuff(zachariahSmith);
+        padmaPatil.likenStudentsRaven(zhouChang);
 
-        int employeeIdToFind = 21; // ID сотрудника, которого нужно найти
-        Employee foundEmployee = employeeManagement.findEmployeeById(employeeIdToFind);
-        if (foundEmployee != null) {
-            System.out.println("Employee found: " + foundEmployee.getLastname() + " " + foundEmployee.getName() + " " + foundEmployee.getPatronymic());
-        } else {
-            System.out.println("Employee with ID " + employeeIdToFind + " not found.");
-        }
+        System.out.println("\nСравнение студентов из разных факультетов по силе магии и расстоянию трансгрессии: \n");
+        Hogwarts.likenStudentsHogw(harryPotter,dracoMalfoy);
+        Hogwarts.likenStudentsHogw(justinFinchFletchley,grahamMontague);
+        Hogwarts.likenStudentsHogw(ronWeasley,marcusBelby);
     }
 }
