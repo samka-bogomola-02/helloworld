@@ -1,19 +1,19 @@
-import model.*;
+import service.exception.WrongLoginException;
+import service.exception.WrongPasswordException;
+
+import static service.ValidationService.validateUser;
 
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("car1",4);
-        Car car2 = new Car("car2",4);
-
-        Truck truck = new Truck("truck1",6);
-        Truck truck2 = new Truck("truck2",8);
-
-        Bicycle bicycle = new Bicycle("bicycle1",2);
-        Bicycle bicycle2 = new Bicycle("bicycle2",2);
-
-        ServiceStation station = new ServiceStation();
-       station.checkApparatus(car);
-       station.checkApparatus(bicycle2);
-       station.checkApparatus(truck);
+        String login = "java_skypro_go";
+        String password = "D_1hWiKjjP_9";
+        String confirmPassword = "D_1hWiKjjP_9";
+        try {
+            validateUser(login, password, confirmPassword);
+        } catch (WrongLoginException | WrongPasswordException e) {
+            System.out.println("Вход не выполнен: " + e.getMessage());
+        } finally {
+            System.out.println("\uD83D\uDE08");
+        }
     }
 }
