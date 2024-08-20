@@ -10,11 +10,11 @@ public class ValidationService {
             throw new WrongLoginException("Логин должен содержать только латинские буквы, цифры и знак подчеркивания, и быть не длиннее 20 символов.");
         }
         // Проверка пароля
-        else if (password == null || password.length() > 20 || !password.matches("[a-zA-Z0-9_]+")) {
+        if (password == null || password.length() > 20 || !password.matches("[a-zA-Z0-9_]+")) {
             throw new WrongPasswordException("Пароль должен содержать только латинские буквы, цифры и знак подчеркивания, и быть не длиннее 20 символов.");
         }
         // Проверка совпадения паролей
-        else if (!password.equals(confirmPassword)) {
+        if (!password.equals(confirmPassword)) {
             throw new WrongPasswordException("Пароли не совпадают.");
         } else {
         System.out.println("Вы вошли.");
